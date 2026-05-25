@@ -1,0 +1,71 @@
+.app {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.main {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--bg);
+}
+.page {
+  padding: 32px;
+  min-height: 100%;
+  animation: fadeIn 0.25s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fab {
+  position: fixed;
+  bottom: 32px; right: 32px;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--em);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; font-weight: 300;
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 100;
+  border: none;
+  font-family: var(--font-body);
+  line-height: 1;
+}
+.fab:hover { transform: scale(1.1) rotate(45deg); background: #059669; }
+.mobileNav {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  z-index: 200;
+  padding: 8px 4px 12px;
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.06);
+}
+.mobileNavItem {
+  flex: 1;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 3px;
+  padding: 6px 4px;
+  border: none; background: transparent;
+  cursor: pointer; transition: all 0.18s;
+  border-radius: var(--radius-sm);
+  color: var(--text3);
+  font-family: var(--font-body);
+  position: relative;
+}
+.mobileNavItem:hover       { color: var(--em); }
+.mobileNavItem_active      { color: var(--em); }
+.mobileNavIcon  { font-size: 20px; line-height: 1; transition: transform 0.2s; }
+.mobileNavLabel { font-size: 10px; font-weight: 600; letter-spacing: 0.2px; }
+.mobileBadgeWrap { position: absolute; top: 2px; right: 8px; }
+@media (max-width: 768px) {
+  .mobileNav { display: flex; }
+  .main      { padding-bottom: 72px; }
+  .fab       { bottom: 88px; right: 16px; width: 48px; height: 48px; font-size: 22px; }
+  .page      { padding: 16px; }
+}

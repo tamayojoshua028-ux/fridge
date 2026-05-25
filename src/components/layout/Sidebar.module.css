@@ -1,0 +1,110 @@
+.sidebar {
+  width: var(--sidebar-width);
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* Logo */
+.logo {
+  padding: 24px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.logoMark {
+  width: 36px;
+  height: 36px;
+  background: var(--em);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.logoText {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.1;
+}
+.logoSub {
+  font-size: 11px;
+  color: var(--text3);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Nav sections */
+.navSection {
+  padding: 8px 12px;
+  margin-top: 4px;
+}
+.navLabel {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text3);
+  padding: 4px 8px;
+  margin-bottom: 2px;
+}
+.navLabel2 { flex: 1; text-align: left; }
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 14px;
+  color: var(--text2);
+  margin-bottom: 1px;
+  user-select: none;
+  width: 100%;
+  background: transparent;
+  border: none;
+  font-family: var(--font-body);
+}
+.navItem:hover { background: var(--em-light); color: var(--em-dark); }
+.navItem_active { background: var(--em-light); color: var(--em-dark); font-weight: 600; }
+
+.navIcon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* Bottom user card */
+.bottom {
+  margin-top: auto;
+  padding: 16px;
+  border-top: 1px solid var(--border);
+}
+.userCard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.userCard:hover { background: var(--bg); }
+.userName { font-size: 13px; font-weight: 600; color: var(--text); }
+.userPlan  { font-size: 11px; color: var(--em); font-weight: 500; }
+
+/* Mobile hidden */
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+}
